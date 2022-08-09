@@ -1,30 +1,13 @@
-import axios from "axios";
-import { API_URL } from "../common/Constants";
+import { Component } from 'react'
+import { API_URL } from '../common/Constants'
+import authHeader from '../login/auth-header';
+import axios from 'axios';
+const USER_API_URL = API_URL + "user";
+class userapis extends Component {
 
-const USER_API_URL = API_URL + "auth/";
-
-class userapis {
-  login(username, password) {
-    return axios
-      .post(USER_API_URL + "signin", {
-        usernameOrEmail: username,
-        password: password,
-      })
-      .then((response) => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
-        return response.data;
-      });
-  }
-
-  getCurrentUser() {
-    return JSON.parse(localStorage.getItem("user"));
-  }
-
-  logout() {
-    localStorage.removeItem("user");
-  }
+    getAllUsers(){
+        return axios.get(USER_API_URL,  {headers : authHeader()})
+    }
 }
 
-export default new userapis();
+export default new userapis()

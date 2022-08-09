@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import userapis from "../api/userapis";
+import loginapis from "../api/loginapis";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import { withRouter } from "react-router";
@@ -39,7 +39,7 @@ class Login extends Component {
       isLoading: true,
     });
 
-    userapis.login(this.state.username, this.state.password).then(
+    loginapis.login(this.state.username, this.state.password).then(
       () => {
          Auth.authenticate();
          localStorage.setItem("isAuthenticated", true);

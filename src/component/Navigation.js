@@ -81,7 +81,7 @@ class Navigation extends Component {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to={"/users"}
                   className="nav-link py-3 px-2"
                   title=""
                   data-bs-toggle="tooltip"

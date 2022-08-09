@@ -6,6 +6,7 @@ import EditItem from "../item/EditItem";
 import ItemList from "../item/ItemList";
 import Auth from "../login/Auth";
 import Login from "../login/Login";
+import UserList from "../user/UserList";
 
 const Router = (props) => (
   <Switch>
@@ -15,6 +16,7 @@ const Router = (props) => (
     <PrivateRoute path={"/item/edit/:id"} component={EditItem} />
     <PrivateRoute path="/invoice" component={InvoiceList} />
     <PrivateRoute path="/new-invoice" component={InvoiceForm} />
+    <PrivateRoute path="/users" component={UserList} />
     <PrivateRoute path="/logout" component={Auth.signout} />
   </Switch>
 );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import userapis from "./component/api/userapis";
+import loginapis from "./component/api/loginapis";
 import EventBus from "./component/common/EventBus";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -16,7 +16,7 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    const user = userapis.getCurrentUser();
+    const user = loginapis.getCurrentUser();
 
     if (user) {
       this.setState({
@@ -34,7 +34,7 @@ export class App extends Component {
   }
 
   logout() {
-    userapis.logout();
+    loginapis.logout();
     this.setState({
       currentUser: undefined,
     });

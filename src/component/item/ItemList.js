@@ -63,7 +63,7 @@ export class ItemList extends Component {
   };
 
   render() {
-    const { items, item } = this.state;
+    const { items} = this.state;
     let itemList;
     if (items.length > 0) {
       itemList = items.map((item) => (
